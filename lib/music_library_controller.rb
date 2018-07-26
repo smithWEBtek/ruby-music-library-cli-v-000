@@ -28,6 +28,7 @@ class MusicLibraryController
 
 		when 'list genres'
 			list_genres
+
 		when 'list artist'
 			list_songs_by_artist
 
@@ -58,7 +59,6 @@ class MusicLibraryController
 
 	def list_artists
 		artists = Artist.all.sort{ |a, b| a.name <=> b.name }.uniq
-		
     artists.each_with_index do |a, i|
       puts "#{i+1}. #{a.name}"
     end
